@@ -9,26 +9,28 @@ function Navigation() {
       : ` text-secondary ${styleActive}`;
   };
   return (
-    <Navbar expand="lg" bg="dark" data-bs-theme="dark">
-      <Container>
-        <Navbar.Brand>
-          <NavLink to="/" className="text-decoration-none me-3">
-            React-Bootstrap
-          </NavLink>
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <NavLink to="/" className={isActiveLink}>
-              Home
+    <>
+      <Navbar expand="lg" bg="dark" data-bs-theme="dark">
+        <Container>
+          <Navbar.Brand>
+            <NavLink to="/" className="text-decoration-none me-3">
+              React-Bootstrap
             </NavLink>
-            <NavLink to="/pokemon" className={isActiveLink}>
-              Pokemones
-            </NavLink>
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="me-auto">
+              <NavLink to="/" className={isActiveLink}>
+                Home
+              </NavLink>
+              <NavLink to="/pokemones" className={isActiveLink}>
+                Pokemones
+              </NavLink>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+    </>
   );
 }
 
