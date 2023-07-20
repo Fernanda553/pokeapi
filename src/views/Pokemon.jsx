@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { Card } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 
 function Pokemon() {
@@ -17,23 +16,41 @@ function Pokemon() {
   }, [name]);
 
   return (
-    <>
-      <Card style={{ width: "18rem" }}>
-        <Card.Img
-          variant="top"
+    <div className="d-flex justify-content-center mt-4">
+      <div className="d-flex" style={{ width: "30rem" }}>
+        <img
+          className="p-4"
+          style={{ width: "22rem" }}
           src={pokemon?.sprites.other.dream_world.front_default}
           alt={`Pokemon${pokemon?.name}`}
         />
-        <Card.Body>
-          <Card.Title>{pokemon?.name}</Card.Title>
-          <Card.Text>
-            {pokemon?.types.map((type) => (
-              <span key={type?.type.name}>{type?.type.name}</span>
-            ))}
-          </Card.Text>
-        </Card.Body>
-      </Card>
-    </>
+        <div className="text-center">
+          <h3>{pokemon?.name}</h3>
+          <div className="text-start">
+            <ul>
+              <li>
+                Hp: <span>{pokemon?.stats[0].base_stat}</span>
+              </li>
+              <li>
+                Attack: <span>{pokemon?.stats[1].base_stat}</span>
+              </li>
+              <li>
+                Defense: <span>{pokemon?.stats[2].base_stat}</span>
+              </li>
+              <li>
+                Special-Attack: <span>{pokemon?.stats[3].base_stat}</span>
+              </li>
+              <li>
+                Special-Defence: <span>{pokemon?.stats[4].base_stat}</span>
+              </li>
+              <li>
+                Speed: <span>{pokemon?.stats[5].base_stat}</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
 export default Pokemon;

@@ -5,8 +5,8 @@ function Navigation() {
   const isActiveLink = ({ isActive }) => {
     const styleActive = "text-decoration-none me-3";
     return isActive
-      ? `text-warning ${styleActive}`
-      : ` text-secondary ${styleActive}`;
+      ? `text-danger ${styleActive}`
+      : ` text-white ${styleActive}`;
   };
   return (
     <>
@@ -14,12 +14,11 @@ function Navigation() {
         <Container>
           <Navbar.Brand>
             <NavLink to="/" className="text-decoration-none me-3">
-              React-Bootstrap
+              <i className="fa-solid fa-location-dot text-secondary fa-xl"></i>
             </NavLink>
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto">
+          <Navbar.Collapse className="justify-content-end">
+            <Nav>
               <NavLink to="/" className={isActiveLink}>
                 Home
               </NavLink>

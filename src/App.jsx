@@ -18,8 +18,11 @@ function App() {
     try {
       const response = await fetch(url);
       const data = await response.json();
+      const dataPokemons = data.results;
 
-      setData(data.results);
+      dataPokemons.sort((a, b) => (a.name > b.name ? 1 : -1));
+
+      setData(dataPokemons);
     } catch (error) {
       console.error(error.message);
     }
